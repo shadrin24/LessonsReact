@@ -12,11 +12,9 @@ const ChartComponent = (props) => {
             areaBottomColor = 'rgba(0, 0, 0, 0.7)',
         } = {},
         size: {
-            heightPercentage = 80
+            // heightPercentage = 80
         } = {}
     } = props;
-    console.log(lineColor);
-
     const chartContainerRef = useRef();
 
     useEffect(
@@ -31,7 +29,7 @@ const ChartComponent = (props) => {
                     textColor,
                 },
                 width: chartContainerRef.current.clientWidth,
-                height: window.innerHeight * (heightPercentage / 100),
+                height: chartContainerRef.current.clientHeight,
 
             });
             chart.timeScale().fitContent();
@@ -54,9 +52,12 @@ const ChartComponent = (props) => {
         <div
             ref={chartContainerRef}
             style={{
-                position: 'fixed',
-                bottom: 0,
+                // position: 'fixed',
+                // bottom: 0,
                 width: '100%',
+                height: '100%',
+                // paddingLeft: '20px',
+                // marginTop: '20px',
             }}
         />
     );
